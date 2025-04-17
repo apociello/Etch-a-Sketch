@@ -3,7 +3,6 @@
 const container = document.querySelector('#container')
 
 
-
 for (let i=0; i<256; i++) {
     const div = document.createElement("div");
     div.classList.add("box");
@@ -11,10 +10,18 @@ for (let i=0; i<256; i++) {
     container.appendChild(div)
 }
 
+let mouseDown = false;
+document.onmousedown = () => (mouseDown = true);
+document.onmouseup = () => (mouseDown = false)
+
 const squares = document.querySelectorAll(".box")
-console.log(squares)
 squares.forEach((square) => {
-    square.addEventListener("mouseover", () => {
+    square.addEventListener("mousedown", () => {
         square.style.backgroundColor = 'blue'
+    })
+    square.addEventListener("mouseover", () => {
+        if (mouseDown) {
+            square.style.backgroundColor = 'blue'
+        }
     })
 })
