@@ -11,4 +11,10 @@ for (let i=0; i<256; i++) {
     container.appendChild(div)
 }
 
-
+const squares = document.querySelectorAll(".box")
+console.log(squares)
+squares.forEach((square) => {
+    square.addEventListener("mouseover", () => {
+        square.style.backgroundColor = 'blue'
+    })
+})
