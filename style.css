@@ -8,8 +8,7 @@
     border: solid black;
     width: 500px;
     height: 500px;
-    margin: auto;
-    margin-top: 150px;
+
     display: flex;
     flex-wrap: wrap;
 }
@@ -17,4 +16,10 @@
 .box {
     border: solid black;
     flex: 1 0 31px;  
+}
+
+.board {
+    display: flex;
+    margin-top: 150px;
+    justify-content: space-evenly;
 }

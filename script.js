@@ -1,6 +1,7 @@
 //Create 16*16(256) squares
 
-const container = document.querySelector('#container')
+const container = document.querySelector('#container');
+const clear = document.querySelector('#clear');
 
 
 for (let i=0; i<256; i++) {
@@ -19,9 +20,15 @@ squares.forEach((square) => {
     square.addEventListener("mousedown", () => {
         square.style.backgroundColor = 'blue'
     })
+
     square.addEventListener("mouseover", () => {
         if (mouseDown) {
             square.style.backgroundColor = 'blue'
         }
     })
+
+    clear.addEventListener("click", () => {
+        square.style.backgroundColor = 'white';
+    })
 })
+
