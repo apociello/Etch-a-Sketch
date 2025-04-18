@@ -1,5 +1,3 @@
-//Create 16*16(256) squares
-
 const container = document.querySelector('#container');
 const clear = document.querySelector('#clear');
 
@@ -19,10 +17,6 @@ function nSquares(num) {
     }
 }
 nSquares(16)
-
-
-
-
 
 let mouseDown = false;
 document.onmousedown = () => (mouseDown = true);
