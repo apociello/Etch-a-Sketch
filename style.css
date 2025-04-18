@@ -5,7 +5,7 @@
 }
 
 #container {
-    border: solid black;
+    outline: 1px solid black;
     width: 500px;
     height: 500px;
     display: flex;
@@ -13,7 +13,7 @@
 }
 
 .box {
-    border: solid black;
+    outline: 1px solid black;
 }
 
 .board {

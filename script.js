@@ -18,7 +18,7 @@ function nSquares(num) {
         container.appendChild(div)
     }
 }
-nSquares(2)
+nSquares(16)
 
 
 
