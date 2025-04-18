@@ -8,14 +8,12 @@
     border: solid black;
     width: 500px;
     height: 500px;
-
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap
 }
 
 .box {
     border: solid black;
-    flex: 1 0 31px;  
 }
 
 .board {

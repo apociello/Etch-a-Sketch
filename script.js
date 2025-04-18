@@ -4,12 +4,25 @@ const container = document.querySelector('#container');
 const clear = document.querySelector('#clear');
 
 
-for (let i=0; i<256; i++) {
-    const div = document.createElement("div");
-    div.classList.add("box");
-    div.textContent = ''
-    container.appendChild(div)
+
+function nSquares(num) {
+    total = num * num;
+    const size = 500 / num;
+
+    for (let i=0; i<total; i++) {
+        const div = document.createElement("div");
+        div.style.width = `${size}px`;
+        div.style.height = `${size}px`;
+        div.classList.add("box");
+        div.textContent = ''
+        container.appendChild(div)
+    }
 }
+nSquares(2)
+
+
+
+
 
 let mouseDown = false;
 document.onmousedown = () => (mouseDown = true);
