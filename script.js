@@ -2,6 +2,8 @@ const container = document.querySelector('#container');
 const clear = document.querySelector('#clear');
 const gridBtn = document.querySelector('#grid')
 
+document.addEventListener("dragstart", (e) => e.preventDefault());
+
 let mouseDown = false;
 document.onmousedown = () => (mouseDown = true);
 document.onmouseup = () => (mouseDown = false)
