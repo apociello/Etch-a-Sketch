@@ -2,6 +2,7 @@ const container = document.querySelector('#container');
 const gridBtn = document.querySelector('#grid');
 const rainbowBtn = document.querySelector('#rainbow');
 const colorBtn = document.querySelector('#color');
+const eraserBtn = document.querySelector('#eraser');
 const clear = document.querySelector('#clear');
 
 
@@ -12,14 +13,33 @@ document.onmousedown = () => (mouseDown = true);
 document.onmouseup = () => (mouseDown = false)
 nSquares(16)
 
+let color = true;
 let rainbow = false;
+let eraser = false;
+
 rainbowBtn.addEventListener('click', () => {
+    color = false;
     rainbow = true;
+    eraser = false;
 })
 
 colorBtn.addEventListener('click', () => {
+    color = true;
     rainbow = false;
-    console.log(rainbow)
+    eraser = false;
+})
+
+eraserBtn.addEventListener('click', () => {
+    color = false;
+    rainbow = false;
+    eraser = true
+})
+
+gridBtn.addEventListener('click', () => {
+    let num = prompt('Choose a number between 1 and 100');
+    if (num < 1 || num > 100) return;
+    nSquares(num);
+    
 })
 
 function nSquares(num) {
@@ -42,19 +62,23 @@ function nSquares(num) {
     const squares = document.querySelectorAll(".box")
     squares.forEach((square) => {
     square.addEventListener("mousedown", () => {
-        if (rainbow) {
+        if (color) {
+            square.style.backgroundColor = 'black'
+        } else if (rainbow) {
             square.style.backgroundColor = `rgb(${randomNumber()},${randomNumber()},${randomNumber()})`
         } else {
-        square.style.backgroundColor = 'black'
+            square.style.backgroundColor = 'white'
         }
     })
 
     square.addEventListener("mouseover", () => {
         if (mouseDown) {
-            if (rainbow) {
+            if (color) {
+                square.style.backgroundColor = 'black'
+            } else if (rainbow) {
                 square.style.backgroundColor = `rgb(${randomNumber()},${randomNumber()},${randomNumber()})`
             } else {
-                square.style.backgroundColor = 'black'
+                square.style.backgroundColor = 'white'
             }
         }
     })
@@ -66,9 +90,6 @@ function nSquares(num) {
 
 }
 
-gridBtn.addEventListener('click', () => {
-    let num = prompt('Choose a number between 1 and 100');
-    if (num < 1 || num > 100) return;
-    nSquares(num);
-    
-})
+function randomNumber() {
+    return Math.floor(Math.random() * 256)
+}
