@@ -1,14 +1,26 @@
 const container = document.querySelector('#container');
+const gridBtn = document.querySelector('#grid');
+const rainbowBtn = document.querySelector('#rainbow');
+const colorBtn = document.querySelector('#color');
 const clear = document.querySelector('#clear');
-const gridBtn = document.querySelector('#grid')
+
 
 document.addEventListener("dragstart", (e) => e.preventDefault());
 
 let mouseDown = false;
 document.onmousedown = () => (mouseDown = true);
 document.onmouseup = () => (mouseDown = false)
-nSquares(2)
+nSquares(16)
 
+let rainbow = false;
+rainbowBtn.addEventListener('click', () => {
+    rainbow = true;
+})
+
+colorBtn.addEventListener('click', () => {
+    rainbow = false;
+    console.log(rainbow)
+})
 
 function nSquares(num) {
     const total = num * num;
@@ -30,12 +42,20 @@ function nSquares(num) {
     const squares = document.querySelectorAll(".box")
     squares.forEach((square) => {
     square.addEventListener("mousedown", () => {
-        square.style.backgroundColor = 'blue'
+        if (rainbow) {
+            square.style.backgroundColor = `rgb(${randomNumber()},${randomNumber()},${randomNumber()})`
+        } else {
+        square.style.backgroundColor = 'black'
+        }
     })
 
     square.addEventListener("mouseover", () => {
         if (mouseDown) {
-            square.style.backgroundColor = 'blue'
+            if (rainbow) {
+                square.style.backgroundColor = `rgb(${randomNumber()},${randomNumber()},${randomNumber()})`
+            } else {
+                square.style.backgroundColor = 'black'
+            }
         }
     })
 
@@ -52,5 +72,3 @@ gridBtn.addEventListener('click', () => {
     nSquares(num);
     
 })
-
-
