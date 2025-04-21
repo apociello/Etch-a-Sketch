@@ -42,6 +42,13 @@ gridBtn.addEventListener('click', () => {
     
 })
 
+clear.addEventListener("click", () => {
+    const squares = document.querySelectorAll(".box")
+    squares.forEach((square) => {
+        square.style.backgroundColor = 'white';
+    })
+})
+
 function nSquares(num) {
     const total = num * num;
     const size = 500 / num;
@@ -81,10 +88,6 @@ function nSquares(num) {
                 square.style.backgroundColor = 'white'
             }
         }
-    })
-
-    clear.addEventListener("click", () => {
-        square.style.backgroundColor = 'white';
     })
 })
 
