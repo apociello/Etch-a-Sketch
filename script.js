@@ -5,7 +5,6 @@ const colorBtn = document.querySelector('#color');
 const eraserBtn = document.querySelector('#eraser');
 const clear = document.querySelector('#clear');
 
-
 document.addEventListener("dragstart", (e) => e.preventDefault());
 
 let mouseDown = false;

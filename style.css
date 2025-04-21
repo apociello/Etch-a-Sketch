@@ -8,25 +8,6 @@ body {
     background-color:black;
 }
 
-h1 {
-    font-family: "Bungee Spice", sans-serif;
-    font-size: 50px;
-    margin-bottom: 10px;
-}
-
-#container {
-    outline: 1px solid white;
-    width: 500px;
-    height: 500px;
-    display: flex;
-    flex-wrap: wrap
-}
-
-.box {
-    outline: 1px solid black;
-    background-color: white;
-}
-
 .board {
     display: flex;
     margin-top: 150px;
@@ -42,9 +23,34 @@ h1 {
     padding-top: 0px;
 }
 
+h1 {
+    font-family: "Bungee Spice", sans-serif;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
 button {
     font-size: 1rem;
     font-family: "Bungee Spice", sans-serif;
     padding: 5px;
     border-radius: 8px;
+}
+
+button:hover {
+    transform: scale(1.1);
+    transition: transform 0.3 ease;
+}
+
+
+#container {
+    outline: 1px solid white;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap
+}
+
+.box {
+    outline: 1px solid black;
+    background-color: white;
 }
